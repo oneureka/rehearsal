@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { PromoCoupon, UserPromoCoupon } from '@/types'
+import type { PromoCoupon, ClaimedCoupon } from '@/types'
 import { useUserStore } from './userStore'
 
 const MOCK_PROMO_COUPONS: PromoCoupon[] = [
@@ -36,20 +36,20 @@ let seq = 0
 
 interface PromoCouponState {
   availableCoupons: PromoCoupon[]
-  userCoupons: UserPromoCoupon[]
+  claimedCoupons: ClaimedCoupon[]
   claimCoupon: (id: string) => boolean
 }
 
 export const usePromoCouponStore = create<PromoCouponState>((set, get) => ({
   availableCoupons: MOCK_PROMO_COUPONS,
-  userCoupons: [],
+  claimedCoupons: [],
 
   claimCoupon: (id) => {
     const coupon = MOCK_PROMO_COUPONS.find((c) => c.id === id)
     if (!coupon) return false
 
     const userId = useUserStore.getState().user.id
-    const alreadyClaimed = get().userCoupons.find(
+    const alreadyClaimed = get().claimedCoupons.find(
       (uc) => uc.couponId === id && uc.userId === userId
     )
     if (alreadyClaimed) return false
@@ -58,7 +58,7 @@ export const usePromoCouponStore = create<PromoCouponState>((set, get) => ({
     const now = new Date()
     const expireDate = new Date(now.getTime() + coupon.validDays * 86400000)
 
-    const userCoupon: UserPromoCoupon = {
+    const userCoupon: ClaimedCoupon = {
       id: `upc_${String(seq).padStart(3, '0')}`,
       userId,
       couponId: coupon.id,
@@ -67,7 +67,7 @@ export const usePromoCouponStore = create<PromoCouponState>((set, get) => ({
       used: false
     }
 
-    set((state) => ({ userCoupons: [userCoupon, ...state.userCoupons] }))
+    set((state) => ({ claimedCoupons: [userCoupon, ...state.claimedCoupons] }))
     return true
   }
 }))

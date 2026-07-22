@@ -6,5 +6,5 @@ export interface Space {
   openHours: string
   description: string
   images: string[]
-  spaceIds: string[]
+  studioIds: string[]
 }

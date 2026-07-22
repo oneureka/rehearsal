@@ -9,9 +9,9 @@ export interface BaseBooking {
   createdAt: string
 }
 
-export interface RoomBooking extends BaseBooking {
-  type: 'room'
-  roomId: string
+export interface StudioBooking extends BaseBooking {
+  type: 'studio'
+  studioId: string
   date: string
   startTime: string
   endTime: string
@@ -19,16 +19,16 @@ export interface RoomBooking extends BaseBooking {
 
 export interface SessionBooking extends BaseBooking {
   type: 'course'
-  teacherId: string
+  choreographerId: string
   courseId: string
   date: string
   timeSlot: string
 }
 
-export type Booking = RoomBooking | SessionBooking
+export type Booking = StudioBooking | SessionBooking
 
-export interface CreateRoomBookingParams {
-  roomId: string
+export interface CreateStudioBookingParams {
+  studioId: string
   date: string
   startTime: string
   endTime: string
@@ -37,7 +37,7 @@ export interface CreateRoomBookingParams {
 }
 
 export interface CreateSessionBookingParams {
-  teacherId: string
+  choreographerId: string
   courseId: string
   date: string
   timeSlot: string

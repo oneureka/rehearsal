@@ -11,7 +11,7 @@ export interface Choreographer {
 
 export interface Course {
   id: string
-  teacherId: string
+  choreographerId: string
   name: string
   description: string
   duration: number

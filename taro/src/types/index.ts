@@ -1,6 +1,6 @@
 export type { User, LoginParams, LoginResult } from './user'
 
-export type { DanceRoom, TimeSlot, RoomListParams } from './room'
+export type { Studio, TimeSlot, StudioListParams } from './studio'
 
 export type { Space } from './space'
 
@@ -9,10 +9,10 @@ export type { Choreographer, Course, ChoreographerListParams } from './choreogra
 export type {
   BookingStatus,
   BaseBooking,
-  RoomBooking,
+  StudioBooking,
   SessionBooking,
   Booking,
-  CreateRoomBookingParams,
+  CreateStudioBookingParams,
   CreateSessionBookingParams
 } from './booking'
 
@@ -23,7 +23,7 @@ export type {
   PurchaseCardParams,
   PromoCouponType,
   PromoCoupon,
-  UserPromoCoupon
+  ClaimedCoupon
 } from './coupon'
 
 export type {

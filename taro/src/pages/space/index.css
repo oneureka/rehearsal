@@ -86,33 +86,33 @@
   display: block;
 }
 
-.space-rooms {
+.space-studios {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.space-room {
+.space-studio {
   background-color: var(--color-bg);
   border-radius: var(--radius-lg);
   padding: 16px;
 }
 
-.space-room-header {
+.space-studio-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
 }
 
-.space-room-name {
+.space-studio-name {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   letter-spacing: 0.5px;
 }
 
-.space-room-type {
+.space-studio-type {
   font-size: 20px;
   padding: 2px 10px;
   border-radius: var(--radius-pill);
@@ -120,24 +120,24 @@
   color: var(--color-text-secondary);
 }
 
-.space-room-meta {
+.space-studio-meta {
   display: flex;
   gap: 12px;
   margin-bottom: 8px;
 }
 
-.space-room-meta-item {
+.space-studio-meta-item {
   font-size: 20px;
   color: var(--color-text-tertiary);
 }
 
-.space-room-tags {
+.space-studio-tags {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
 }
 
-.space-room-tag {
+.space-studio-tag {
   font-size: 20px;
   padding: 2px 10px;
   border-radius: var(--radius-pill);

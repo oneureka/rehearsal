@@ -3,19 +3,19 @@ import Taro from '@tarojs/taro'
 import { useMemo, useState } from 'react'
 import { useBookingStore } from '@/stores/bookingStore'
 import { useTransactionStore } from '@/stores/transactionStore'
-import { mockRooms, mockChoreographers } from '@/services/mock/data'
+import { mockStudios, mockChoreographers } from '@/services/mock/data'
 import { formatPrice } from '@/utils/format'
 import { BOOKING_STATUS_MAP, TRANSACTION_TYPE_MAP } from '@/constants'
 import './index.css'
 
 const tabs = ['全部', '场地', '课程', '交易']
 
-function getLabel(booking: { type: string; roomId?: string; teacherId?: string }) {
-  if (booking.type === 'room') {
-    const room = mockRooms.find((r) => r.id === booking.roomId)
-    return room?.name || '场地'
+function getLabel(booking: { type: string; studioId?: string; choreographerId?: string }) {
+  if (booking.type === 'studio') {
+    const studio = mockStudios.find((r) => r.id === booking.studioId)
+    return studio?.name || '场地'
   }
-  const choreographer = mockChoreographers.find((t) => t.id === booking.teacherId)
+  const choreographer = mockChoreographers.find((t) => t.id === booking.choreographerId)
   return choreographer?.name || '课程指导'
 }
 
@@ -32,7 +32,7 @@ export default function Orders() {
         (a, b) => new Date(b.data.createdAt).getTime() - new Date(a.data.createdAt).getTime()
       )
     }
-    if (activeTab === 1) return bookings.filter((b) => b.type === 'room').map((b) => ({ type: 'booking' as const, data: b }))
+    if (activeTab === 1) return bookings.filter((b) => b.type === 'studio').map((b) => ({ type: 'booking' as const, data: b }))
     if (activeTab === 2) return bookings.filter((b) => b.type === 'course').map((b) => ({ type: 'booking' as const, data: b }))
     return transactions.map((t) => ({ type: 'transaction' as const, data: t }))
   }, [bookings, transactions, activeTab])
@@ -98,13 +98,13 @@ export default function Orders() {
                     </Text>
                   </View>
                   <Text className="orders-item-desc">
-                    {b.type === 'room'
+                    {b.type === 'studio'
                       ? `${b.date} ${b.startTime}-${b.endTime}`
                       : `${b.date} ${b.timeSlot}`}
                   </Text>
                   <View className="orders-item-bottom">
                     <Text className="orders-item-type">
-                      {b.type === 'room' ? '场地预约' : '课程指导'}
+                      {b.type === 'studio' ? '场地预约' : '课程指导'}
                     </Text>
                     <Text className="orders-item-price">
                       {formatPrice(b.totalPrice)}

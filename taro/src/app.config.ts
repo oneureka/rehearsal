@@ -5,7 +5,7 @@ export default defineAppConfig({
     'pages/orders/index',
     'pages/profile/index',
     'pages/space/index',
-    'pages/room/index',
+    'pages/studio/index',
     'pages/booking/index',
     'pages/choreographers/index',
     'pages/choreographer/index',

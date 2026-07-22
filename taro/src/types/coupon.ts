@@ -37,7 +37,7 @@ export interface PromoCoupon {
   description: string
 }
 
-export interface UserPromoCoupon {
+export interface ClaimedCoupon {
   id: string
   userId: string
   couponId: string

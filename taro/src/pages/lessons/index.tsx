@@ -13,7 +13,7 @@ const SLOTS = ['10:00', '11:00', '14:00', '15:00', '16:00', '19:00', '20:00']
 
 export default function LessonBooking() {
   const router = useRouter()
-  const choreographer = mockChoreographers.find((c) => c.id === router.params.teacherId)
+  const choreographer = mockChoreographers.find((c) => c.id === router.params.choreographerId)
   const balance = useUserStore((s) => s.user.balance)
   const addBooking = useBookingStore((s) => s.addBooking)
 
@@ -43,7 +43,7 @@ export default function LessonBooking() {
         id: `bk_${Date.now()}`,
         userId: useUserStore.getState().user.id,
         type: 'course',
-        teacherId: choreographer.id,
+        choreographerId: choreographer.id,
         courseId: '',
         date,
         timeSlot: selectedSlot,

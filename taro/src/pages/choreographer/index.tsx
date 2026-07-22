@@ -70,7 +70,7 @@ export default function ChoreographerDetail() {
         hoverClass="hover-btn"
         onClick={() =>
           Taro.navigateTo({
-            url: `/pages/lessons/index?teacherId=${choreographer.id}`
+            url: `/pages/lessons/index?choreographerId=${choreographer.id}`
           })
         }
       >

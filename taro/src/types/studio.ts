@@ -1,4 +1,4 @@
-export interface DanceRoom {
+export interface Studio {
   id: string
   name: string
   description: string
@@ -21,7 +21,7 @@ export interface TimeSlot {
   available: boolean
 }
 
-export interface RoomListParams {
+export interface StudioListParams {
   keyword?: string
   district?: string
   minPrice?: number

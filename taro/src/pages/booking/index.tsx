@@ -3,7 +3,7 @@ import Taro, { useRouter } from '@tarojs/taro'
 import { useState } from 'react'
 import { useUserStore } from '@/stores/userStore'
 import { useBookingStore } from '@/stores/bookingStore'
-import { mockRooms } from '@/services/mock/data'
+import { mockStudios } from '@/services/mock/data'
 import { formatPrice } from '@/utils/format'
 import TimeSlotPicker from '@/components/TimeSlotPicker'
 import Loading from '@/components/Loading'
@@ -11,7 +11,7 @@ import './index.css'
 
 export default function Booking() {
   const router = useRouter()
-  const room = mockRooms.find((r) => r.id === router.params.id)
+  const studio = mockStudios.find((r) => r.id === router.params.id)
   const balance = useUserStore((s) => s.user.balance)
   const addBooking = useBookingStore((s) => s.addBooking)
 
@@ -20,7 +20,7 @@ export default function Booking() {
   const [selectedEnd, setSelectedEnd] = useState(0)
   const [loading, setLoading] = useState(false)
 
-  if (!room) {
+  if (!studio) {
     return (
       <View className="booking-error">
         <Text>预约信息有误</Text>
@@ -29,7 +29,7 @@ export default function Booking() {
   }
 
   const hours = Math.max(0, selectedEnd - selectedStart)
-  const total = hours * room.pricePerHour
+  const total = hours * studio.pricePerHour
   const canSubmit = hours > 0 && total <= balance
 
   const handleSlotSelect = (date: string, start: number, end: number) => {
@@ -45,8 +45,8 @@ export default function Booking() {
       addBooking({
         id: `bk_${Date.now()}`,
         userId: useUserStore.getState().user.id,
-        type: 'room',
-        roomId: room.id,
+        type: 'studio',
+        studioId: studio.id,
         date: selectedDate,
         startTime: `${selectedStart}:00`,
         endTime: `${selectedEnd}:00`,
@@ -66,14 +66,14 @@ export default function Booking() {
       <Loading visible={loading} text="提交中..." />
 
       <View className="booking-card">
-        <Text className="booking-card-name">{room.name}</Text>
+        <Text className="booking-card-name">{studio.name}</Text>
         <Text className="booking-card-price">
-          {formatPrice(room.pricePerHour)}/时
+          {formatPrice(studio.pricePerHour)}/时
         </Text>
       </View>
 
       <TimeSlotPicker
-        pricePerHour={room.pricePerHour}
+        pricePerHour={studio.pricePerHour}
         onSelect={handleSlotSelect}
       />
 

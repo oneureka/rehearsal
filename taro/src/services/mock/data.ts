@@ -1,4 +1,4 @@
-import type { DanceRoom, Choreographer, Space } from '@/types'
+import type { Studio, Choreographer, Space } from '@/types'
 
 export interface BannerItem {
   id: string
@@ -37,7 +37,7 @@ export const mockSpaces: Space[] = [
     openHours: '09:00-22:00',
     description: '位于静安寺商圈，交通便利，配备专业舞蹈房与摄影棚',
     images: [],
-    spaceIds: ['1', '2']
+    studioIds: ['1', '2']
   },
   {
     id: 'space_002',
@@ -47,11 +47,11 @@ export const mockSpaces: Space[] = [
     openHours: '08:00-23:00',
     description: '坐落于衡复历史文化风貌区，大型排练空间与专业录音设备',
     images: [],
-    spaceIds: ['3', '4']
+    studioIds: ['3', '4']
   }
 ]
 
-export const mockRooms: DanceRoom[] = [
+export const mockStudios: Studio[] = [
   {
     id: '1',
     name: 'Hype Dance Studio',

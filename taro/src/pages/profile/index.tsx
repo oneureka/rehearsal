@@ -9,7 +9,7 @@ import './index.css'
 export default function Profile() {
   const { user } = useUserStore()
   const cardCount = useCouponStore((s) => s.userCards.length)
-  const promoCount = usePromoCouponStore((s) => s.userCoupons.length)
+  const promoCount = usePromoCouponStore((s) => s.claimedCoupons.length)
 
   return (
     <View className="profile">
@@ -80,7 +80,7 @@ export default function Profile() {
         <View
           className="profile-menu-item"
           hoverClass="hover-opacity"
-          onClick={() => Taro.navigateTo({ url: '/pages/coupons/index' })}
+          onClick={() => Taro.switchTab({ url: '/pages/coupons/index' })}
         >
           <Text className="profile-menu-text">我的卡券</Text>
           <Text className="profile-menu-arrow">→</Text>

@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { View, Text, Swiper, SwiperItem, ScrollView } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import './index.css'
-import { mockBanners, mockSpaces, mockRooms, mockChoreographers } from '@/services/mock/data'
+import { mockBanners, mockSpaces, mockStudios, mockChoreographers } from '@/services/mock/data'
 import { formatPrice } from '@/utils/format'
 
-const roomColors = ['#E8D5C4', '#D4C5B2', '#C9BAA3', '#E0D0C0']
+const studioColors = ['#E8D5C4', '#D4C5B2', '#C9BAA3', '#E0D0C0']
 const choreographerColors = ['#C4A882', '#B89B80', '#D4BFA8', '#C9B090']
 
 function navigateTo(url: string) {
@@ -57,7 +57,7 @@ export default function Home() {
           hoverClass="hover-press"
           onClick={() => Taro.switchTab({ url: '/pages/orders/index' })}
         >
-          <View className="quick-action-icon quick-action-icon--room">
+          <View className="quick-action-icon quick-action-icon--studio">
             <Text className="quick-action-icon-text">R</Text>
           </View>
           <Text className="quick-action-label">预约中心</Text>
@@ -120,27 +120,27 @@ export default function Home() {
           <Text className="section-title">精选场地</Text>
         </View>
         <ScrollView className="section-scroll" scrollX showScrollbar={false}>
-          {mockRooms.map((room, i) => (
+          {mockStudios.map((studio, i) => (
             <View
-              key={room.id}
-              className="room-card"
+              key={studio.id}
+              className="studio-card"
               hoverClass="hover-press-down"
               onClick={() =>
-                navigateTo(`/pages/room/index?id=${room.id}`)
+                navigateTo(`/pages/studio/index?id=${studio.id}`)
               }
             >
               <View
-                className="room-card-image"
-                style={{ backgroundColor: roomColors[i % roomColors.length] }}
+                className="studio-card-image"
+                style={{ backgroundColor: studioColors[i % studioColors.length] }}
               >
-                <Text className="room-card-image-text">{room.name[0]}</Text>
+                <Text className="studio-card-image-text">{studio.name[0]}</Text>
               </View>
-              <View className="room-card-body">
-                <Text className="room-card-name">{room.name}</Text>
-                <View className="room-card-meta">
-                  <Text className="room-card-rating">★ {room.rating}</Text>
-                  <Text className="room-card-price">
-                    {formatPrice(room.pricePerHour)}/时
+              <View className="studio-card-body">
+                <Text className="studio-card-name">{studio.name}</Text>
+                <View className="studio-card-meta">
+                  <Text className="studio-card-rating">★ {studio.rating}</Text>
+                  <Text className="studio-card-price">
+                    {formatPrice(studio.pricePerHour)}/时
                   </Text>
                 </View>
               </View>

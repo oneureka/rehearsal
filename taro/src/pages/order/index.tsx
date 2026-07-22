@@ -1,7 +1,7 @@
 import { View, Text } from '@tarojs/components'
 import { useRouter } from '@tarojs/taro'
 import { useBookingStore } from '@/stores/bookingStore'
-import { mockRooms, mockChoreographers } from '@/services/mock/data'
+import { mockStudios, mockChoreographers } from '@/services/mock/data'
 import { formatPrice, formatDateTime } from '@/utils/format'
 import { BOOKING_STATUS_MAP } from '@/constants'
 import './index.css'
@@ -32,9 +32,9 @@ export default function OrderDetail() {
   }
 
   const subjectName =
-    booking.type === 'room'
-      ? mockRooms.find((r) => r.id === booking.roomId)?.name || '场地'
-      : mockChoreographers.find((c) => c.id === booking.teacherId)?.name || '课程指导'
+    booking.type === 'studio'
+      ? mockStudios.find((r) => r.id === booking.studioId)?.name || '场地'
+      : mockChoreographers.find((c) => c.id === booking.choreographerId)?.name || '课程指导'
 
   return (
     <View className="order-detail">
@@ -48,7 +48,7 @@ export default function OrderDetail() {
         <View className="order-detail-row">
           <Text className="order-detail-label">类型</Text>
           <Text className="order-detail-value">
-            {booking.type === 'room' ? '场地预约' : '课程指导'}
+            {booking.type === 'studio' ? '场地预约' : '课程指导'}
           </Text>
         </View>
         <View className="order-detail-row">
@@ -58,7 +58,7 @@ export default function OrderDetail() {
         <View className="order-detail-row">
           <Text className="order-detail-label">时段</Text>
           <Text className="order-detail-value">
-            {booking.type === 'room'
+            {booking.type === 'studio'
               ? `${booking.startTime}-${booking.endTime}`
               : booking.timeSlot}
           </Text>

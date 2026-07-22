@@ -5,8 +5,8 @@ const MOCK_BOOKINGS: Booking[] = [
   {
     id: 'bk_001',
     userId: 'user_001',
-    type: 'room',
-    roomId: '1',
+    type: 'studio',
+    studioId: '1',
     date: '2026-07-25',
     startTime: '14:00',
     endTime: '16:00',

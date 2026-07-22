@@ -1,12 +1,12 @@
 import { View, Text, ScrollView } from '@tarojs/components'
 import Taro, { useRouter } from '@tarojs/taro'
-import { mockSpaces, mockRooms } from '@/services/mock/data'
+import { mockSpaces, mockStudios } from '@/services/mock/data'
 import { formatPrice } from '@/utils/format'
 import './index.css'
 
 const spaceColors = ['#E8D5C4', '#C9BAA3']
 
-const roomTypeLabel: Record<string, string> = {
+const studioTypeLabel: Record<string, string> = {
   dance: '舞蹈房',
   studio: '摄影棚'
 }
@@ -23,7 +23,7 @@ export default function SpaceDetail() {
     )
   }
 
-  const rooms = mockRooms.filter((r) => space.spaceIds.includes(r.id))
+  const studios = mockStudios.filter((r) => space.studioIds.includes(r.id))
 
   return (
     <View className="space">
@@ -59,30 +59,30 @@ export default function SpaceDetail() {
           <View className="space-divider" />
 
           <Text className="space-section-title">所有场地</Text>
-          <View className="space-rooms">
-            {rooms.map((room) => (
+          <View className="space-studios">
+            {studios.map((studio) => (
               <View
-                key={room.id}
-                className="space-room"
+                key={studio.id}
+                className="space-studio"
                 hoverClass="hover-card"
                 onClick={() =>
-                  Taro.navigateTo({ url: `/pages/room/index?id=${room.id}` })
+                  Taro.navigateTo({ url: `/pages/studio/index?id=${studio.id}` })
                 }
               >
-                <View className="space-room-header">
-                  <Text className="space-room-name">{room.name}</Text>
-                  <Text className="space-room-type">
-                    {roomTypeLabel[room.type]}
+                <View className="space-studio-header">
+                  <Text className="space-studio-name">{studio.name}</Text>
+                  <Text className="space-studio-type">
+                    {studioTypeLabel[studio.type]}
                   </Text>
                 </View>
-                <View className="space-room-meta">
-                  <Text className="space-room-meta-item">{room.area}㎡</Text>
-                  <Text className="space-room-meta-item">容纳 {room.capacity} 人</Text>
-                  <Text className="space-room-meta-item">{formatPrice(room.pricePerHour)}/时</Text>
+                <View className="space-studio-meta">
+                  <Text className="space-studio-meta-item">{studio.area}㎡</Text>
+                  <Text className="space-studio-meta-item">容纳 {studio.capacity} 人</Text>
+                  <Text className="space-studio-meta-item">{formatPrice(studio.pricePerHour)}/时</Text>
                 </View>
-                <View className="space-room-tags">
-                  {room.facilities.slice(0, 3).map((f) => (
-                    <Text key={f} className="space-room-tag">{f}</Text>
+                <View className="space-studio-tags">
+                  {studio.facilities.slice(0, 3).map((f) => (
+                    <Text key={f} className="space-studio-tag">{f}</Text>
                   ))}
                 </View>
               </View>

@@ -13,7 +13,7 @@ const couponTypeLabel: Record<string, string> = {
 }
 
 export default function Promotions() {
-  const { availableCoupons, userCoupons, claimCoupon } = usePromoCouponStore()
+  const { availableCoupons, claimedCoupons, claimCoupon } = usePromoCouponStore()
   const [activeTab, setActiveTab] = useState(0)
 
   const handleClaim = (id: string) => {
@@ -76,12 +76,12 @@ export default function Promotions() {
         </View>
       ) : (
         <View className="promotions-list">
-          {userCoupons.length === 0 ? (
+          {claimedCoupons.length === 0 ? (
             <View className="promotions-empty">
               <Text className="promotions-empty-text">暂无优惠券</Text>
             </View>
           ) : (
-            userCoupons.map((uc) => {
+            claimedCoupons.map((uc) => {
               const coupon = uc.coupon
               if (!coupon) return null
               return (
