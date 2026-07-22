@@ -1,0 +1,128 @@
+.room-booking {
+  padding: 24px 32px 120px;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.room-booking-error {
+  padding: 40px;
+  text-align: center;
+  color: var(--color-text-tertiary);
+}
+
+.room-booking-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+}
+
+.room-booking-card-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+}
+
+.room-booking-card-price {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.room-booking-section {
+  margin-bottom: 20px;
+}
+
+.room-booking-section-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.room-booking-payment {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.room-booking-payment-item {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-booking-payment-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.room-booking-payment-desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+.room-booking-payment-check {
+  font-size: var(--font-size-base);
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+}
+
+.room-booking-section {
+  margin-bottom: 20px;
+}
+
+.room-booking-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--color-divider);
+  margin-top: 8px;
+}
+
+.room-booking-total-label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.room-booking-total-price {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.room-booking-submit {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 32px 32px;
+  padding: 24px 0;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.room-booking-submit-text {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.room-booking-submit--disabled {
+  background-color: var(--color-border);
+}
+
+.room-booking-submit--disabled .room-booking-submit-text {
+  color: var(--color-text-tertiary);
+}

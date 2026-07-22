@@ -1,0 +1,103 @@
+.tsp {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tsp-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.tsp-section-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+}
+
+.tsp-section-hint {
+  font-size: 20px;
+  color: var(--color-text-tertiary);
+}
+
+.tsp-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.tsp-date-value {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.tsp-date-arrow {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+.tsp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.tsp-slot {
+  padding: 14px 0;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.tsp-slot--selected {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.tsp-slot--edge {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.tsp-slot--hover {
+  opacity: 0.7;
+}
+
+.tsp-slot-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.tsp-slot-text--selected {
+  color: #ffffff;
+}
+
+.tsp-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+}
+
+.tsp-total-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.tsp-total-price {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}

@@ -1,0 +1,54 @@
+{
+  "name": "rehearsal",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:weapp": "taro build --type weapp -- --watch",
+    "dev:h5": "taro build --type h5 -- --watch",
+    "build:weapp": "taro build --type weapp",
+    "build:h5": "taro build --type h5"
+  },
+  "browserslist": {
+    "development": [
+      "defaults and fully supports es6-module",
+      "maintained node versions"
+    ],
+    "production": [
+      "last 3 versions",
+      "Android >= 4.1",
+      "ios >= 8"
+    ]
+  },
+  "dependencies": {
+    "@babel/runtime": "7.29.7",
+    "@tarojs/components": "4.1.11",
+    "@tarojs/helper": "4.1.11",
+    "@tarojs/plugin-framework-react": "4.1.11",
+    "@tarojs/plugin-platform-h5": "4.1.11",
+    "@tarojs/plugin-platform-weapp": "4.1.11",
+    "@tarojs/react": "4.1.11",
+    "@tarojs/runtime": "4.1.11",
+    "@tarojs/shared": "4.1.11",
+    "@tarojs/taro": "4.1.11",
+    "dayjs": "1.11.21",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zustand": "5.0.14"
+  },
+  "devDependencies": {
+    "@babel/core": "7.29.7",
+    "@babel/plugin-transform-class-properties": "7.29.7",
+    "@babel/preset-react": "7.29.7",
+    "@tarojs/cli": "4.2.1",
+    "@tarojs/plugin-generator": "4.2.1",
+    "@tarojs/vite-runner": "4.2.1",
+    "@types/minimatch": "5.1.2",
+    "@types/react": "18.3.31",
+    "@vitejs/plugin-react": "4.7.0",
+    "babel-preset-taro": "4.2.1",
+    "postcss": "8.5.21",
+    "react-refresh": "0.14.0",
+    "terser": "5.49.0",
+    "typescript": "5.9.3",
+    "vite": "4.5.14"
+  }
+}

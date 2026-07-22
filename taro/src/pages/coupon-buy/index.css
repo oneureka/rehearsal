@@ -1,0 +1,149 @@
+.coupon-buy {
+  padding: 24px 32px 32px;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.coupon-buy-balance {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 16px;
+}
+
+.coupon-buy-balance-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.coupon-buy-balance-value {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.coupon-buy-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 16px;
+}
+
+.coupon-buy-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.coupon-buy-card-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+}
+
+.coupon-buy-card-type {
+  font-size: 20px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-tag-bg);
+  color: var(--color-text-secondary);
+}
+
+.coupon-buy-card-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.coupon-buy-card-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.coupon-buy-card-qty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-divider);
+}
+
+.coupon-buy-card-qty-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.coupon-buy-card-qty-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.coupon-buy-card-qty-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coupon-buy-card-qty-btn-text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.coupon-buy-card-qty-num {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  min-width: 32px;
+  text-align: center;
+}
+
+.coupon-buy-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-divider);
+}
+
+.coupon-buy-card-price {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.coupon-buy-card-unit {
+  font-size: 20px;
+  color: var(--color-text-tertiary);
+  display: block;
+  margin-top: 2px;
+}
+
+.coupon-buy-card-btn {
+  padding: 16px 32px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+.coupon-buy-card-btn-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: #ffffff;
+  letter-spacing: 1px;
+}

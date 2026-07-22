@@ -1,0 +1,67 @@
+page {
+  --color-bg: #f8f5f0;
+  --color-bg-secondary: #f0ebe3;
+  --color-surface: #ffffff;
+  --color-primary: #6b5344;
+  --color-primary-light: #c4a882;
+  --color-text-primary: #2c1810;
+  --color-text-secondary: #8b7d6b;
+  --color-text-tertiary: #b8a89a;
+  --color-border: #e8e0d6;
+  --color-divider: #f0ebe3;
+  --color-error: #c44e4e;
+  --color-success: #7b9e7b;
+  --color-tag-bg: #f0ebe3;
+
+  --font-family:
+    -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue',
+    sans-serif;
+  --font-size-xs: 22px;
+  --font-size-sm: 24px;
+  --font-size-base: 28px;
+  --font-size-lg: 32px;
+  --font-size-xl: 36px;
+  --font-size-2xl: 44px;
+  --font-size-3xl: 52px;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 20px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 40px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 2px 8px rgba(44, 24, 16, 0.06);
+  --shadow-md: 0 4px 16px rgba(44, 24, 16, 0.08);
+  --shadow-lg: 0 8px 24px rgba(44, 24, 16, 0.1);
+}
+
+page {
+  background-color: var(--color-bg);
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+page,
+view,
+text,
+image,
+scroll-view,
+swiper,
+swiper-item {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

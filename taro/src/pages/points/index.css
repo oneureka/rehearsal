@@ -1,0 +1,78 @@
+.points {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.points-header {
+  background-color: var(--color-surface);
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.points-header-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.points-header-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+.points-list {
+  padding: 8px 32px 32px;
+}
+
+.points-empty {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.points-empty-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+.points-record {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.points-record:last-child {
+  border-bottom: none;
+}
+
+.points-record-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.points-record-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.points-record-time {
+  font-size: 20px;
+  color: var(--color-text-tertiary);
+}
+
+.points-record-points {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.points-record-points--earn {
+  color: var(--color-success);
+}
+
+.points-record-points--spend {
+  color: var(--color-text-tertiary);
+}
