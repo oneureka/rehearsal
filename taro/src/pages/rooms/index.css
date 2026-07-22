@@ -1,91 +1,104 @@
-.teacher-list {
+.room-list {
   padding: 24px 32px 32px;
 }
 
-.teacher-list-card {
+.room-list-card {
   display: flex;
   background-color: var(--color-surface);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
   margin-bottom: 16px;
 }
 
-.teacher-list-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+.room-list-card-media {
+  width: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-right: 16px;
 }
 
-.teacher-list-avatar-text {
-  font-size: 48px;
+.room-list-card-media-text {
+  font-size: 52px;
   font-weight: var(--font-weight-bold);
   color: rgba(255, 255, 255, 0.5);
 }
 
-.teacher-list-body {
+.room-list-card-body {
   flex: 1;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-}
-
-.teacher-list-header {
-  display: flex;
-  align-items: baseline;
   gap: 8px;
 }
 
-.teacher-list-name {
+.room-list-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.room-list-card-name {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
-.teacher-list-title {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-tertiary);
+.room-list-card-type {
+  font-size: 20px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-tag-bg);
+  color: var(--color-text-secondary);
 }
 
-.teacher-list-desc {
+.room-list-card-desc {
   font-size: var(--font-size-sm);
   color: var(--color-text-tertiary);
+  letter-spacing: 0.3px;
   line-height: 1.4;
 }
 
-.teacher-list-row {
+.room-list-card-size {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.room-list-card-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.teacher-list-price {
+.room-list-card-rating {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-light);
+}
+
+.room-list-card-price {
   font-size: var(--font-size-sm);
   color: var(--color-primary);
   font-weight: var(--font-weight-medium);
 }
 
-.teacher-list-rating {
-  font-size: var(--font-size-sm);
-  color: var(--color-primary-light);
-}
-
-.teacher-list-tags {
+.room-list-card-tags {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
 }
 
-.teacher-list-tag {
+.room-list-card-tag {
   font-size: 20px;
   padding: 2px 10px;
   border-radius: var(--radius-pill);
   background-color: var(--color-tag-bg);
   color: var(--color-text-secondary);
+}
+
+.hover-card {
+  transform: scale(0.98);
+  box-shadow: var(--shadow-md);
 }

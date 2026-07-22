@@ -221,7 +221,7 @@
   font-weight: var(--font-weight-medium);
 }
 
-.teacher-card {
+.coach-card {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -230,11 +230,11 @@
   flex-shrink: 0;
 }
 
-.teacher-card:last-child {
+.coach-card:last-child {
   margin-right: 0;
 }
 
-.teacher-avatar {
+.coach-avatar {
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -245,13 +245,13 @@
   box-shadow: var(--shadow-sm);
 }
 
-.teacher-avatar-text {
+.coach-avatar-text {
   font-size: 64px;
   font-weight: var(--font-weight-bold);
   color: rgba(255, 255, 255, 0.6);
 }
 
-.teacher-name {
+.coach-name {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
@@ -259,19 +259,19 @@
   margin-bottom: 4px;
 }
 
-.teacher-title {
+.coach-title {
   font-size: var(--font-size-sm);
   color: var(--color-text-tertiary);
   letter-spacing: 0.5px;
   margin-bottom: 8px;
 }
 
-.teacher-tags {
+.coach-tags {
   display: flex;
   gap: 6px;
 }
 
-.teacher-tag {
+.coach-tag {
   font-size: 20px;
   padding: 4px 12px;
   border-radius: var(--radius-pill);
@@ -297,6 +297,45 @@
   opacity: 0.6;
 }
 
+.space-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.space-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.space-card-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+}
+
+.space-card-arrow {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+.space-card-address {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.space-card-hours {
+  font-size: 20px;
+  color: var(--color-text-tertiary);
+}
+
 .home-footer {
   text-align: center;
   padding: 48px 0 24px;
@@ -306,4 +345,9 @@
   font-size: var(--font-size-xs);
   color: var(--color-text-tertiary);
   letter-spacing: 2px;
+}
+
+.hover-card {
+  transform: scale(0.98);
+  box-shadow: var(--shadow-md);
 }

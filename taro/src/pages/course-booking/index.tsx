@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react'
 import dayjs from 'dayjs'
 import { useUserStore } from '@/stores/userStore'
 import { useBookingStore } from '@/stores/bookingStore'
-import { mockTeachers } from '@/services/mock/data'
+import { mockCoaches } from '@/services/mock/data'
 import { formatPrice } from '@/utils/format'
 import Loading from '@/components/Loading'
 import './index.css'
@@ -13,7 +13,7 @@ const SLOTS = ['10:00', '11:00', '14:00', '15:00', '16:00', '19:00', '20:00']
 
 export default function CourseBooking() {
   const router = useRouter()
-  const teacher = mockTeachers.find((t) => t.id === router.params.teacherId)
+  const coach = mockCoaches.find((c) => c.id === router.params.teacherId)
   const balance = useUserStore((s) => s.user.balance)
   const addBooking = useBookingStore((s) => s.addBooking)
 
@@ -24,7 +24,7 @@ export default function CourseBooking() {
 
   const dateDisplay = useMemo(() => dayjs(date).format('MM月DD日 ddd'), [date])
 
-  if (!teacher) {
+  if (!coach) {
     return (
       <View className="course-booking-error">
         <Text>预约信息有误</Text>
@@ -32,7 +32,7 @@ export default function CourseBooking() {
     )
   }
 
-  const price = teacher.pricePerSession
+  const price = coach.pricePerSession
   const canSubmit = !!selectedSlot && price <= balance
 
   const handleSubmit = () => {
@@ -43,7 +43,7 @@ export default function CourseBooking() {
         id: `bk_${Date.now()}`,
         userId: useUserStore.getState().user.id,
         type: 'course',
-        teacherId: teacher.id,
+        teacherId: coach.id,
         courseId: '',
         date,
         timeSlot: selectedSlot,
@@ -64,11 +64,11 @@ export default function CourseBooking() {
 
       <View className="course-booking-card">
         <View className="course-booking-avatar course-booking-avatar--lg">
-          <Text className="course-booking-avatar-text">{teacher.name[0]}</Text>
+          <Text className="course-booking-avatar-text">{coach.name[0]}</Text>
         </View>
         <View className="course-booking-card-body">
-          <Text className="course-booking-card-name">{teacher.name}</Text>
-          <Text className="course-booking-card-title">{teacher.title}</Text>
+          <Text className="course-booking-card-name">{coach.name}</Text>
+          <Text className="course-booking-card-title">{coach.title}</Text>
           <Text className="course-booking-card-price">
             {formatPrice(price)}/节
           </Text>

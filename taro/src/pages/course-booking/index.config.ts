@@ -1,3 +1,3 @@
 export default definePageConfig({
-  navigationBarTitleText: '课程预约'
+  navigationBarTitleText: '课程指导'
 })

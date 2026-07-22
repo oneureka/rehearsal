@@ -1,7 +1,7 @@
 import { View, Text } from '@tarojs/components'
 import { useRouter } from '@tarojs/taro'
 import { useBookingStore } from '@/stores/bookingStore'
-import { mockRooms, mockTeachers } from '@/services/mock/data'
+import { mockRooms, mockCoaches } from '@/services/mock/data'
 import { formatPrice, formatDateTime } from '@/utils/format'
 import { BOOKING_STATUS_MAP } from '@/constants'
 import './index.css'
@@ -33,8 +33,8 @@ export default function OrderDetail() {
 
   const subjectName =
     booking.type === 'room'
-      ? mockRooms.find((r) => r.id === booking.roomId)?.name || '舞蹈室'
-      : mockTeachers.find((t) => t.id === booking.teacherId)?.name || '导师课程'
+      ? mockRooms.find((r) => r.id === booking.roomId)?.name || '场地'
+      : mockCoaches.find((c) => c.id === booking.teacherId)?.name || '课程指导'
 
   return (
     <View className="order-detail">
@@ -48,7 +48,7 @@ export default function OrderDetail() {
         <View className="order-detail-row">
           <Text className="order-detail-label">类型</Text>
           <Text className="order-detail-value">
-            {booking.type === 'room' ? '场地预约' : '课程预约'}
+            {booking.type === 'room' ? '场地预约' : '课程指导'}
           </Text>
         </View>
         <View className="order-detail-row">

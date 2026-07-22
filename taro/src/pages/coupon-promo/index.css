@@ -1,0 +1,152 @@
+.coupon-promo {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.coupon-promo-tabs {
+  display: flex;
+  background-color: var(--color-surface);
+  padding: 0 32px;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.coupon-promo-tab {
+  position: relative;
+  padding: 20px 0;
+  margin-right: 32px;
+}
+
+.coupon-promo-tab-text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.5px;
+}
+
+.coupon-promo-tab--active .coupon-promo-tab-text {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.coupon-promo-tab-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.coupon-promo-list {
+  padding: 16px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.coupon-promo-empty {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.coupon-promo-empty-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+.coupon-promo-card {
+  display: flex;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.coupon-promo-card--used {
+  opacity: 0.5;
+}
+
+.coupon-promo-card-side {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.coupon-promo-card-side--discount {
+  background-color: #f0ebe3;
+}
+
+.coupon-promo-card-side--voucher {
+  background-color: #e8e0d6;
+}
+
+.coupon-promo-card-side-value {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.coupon-promo-card-side-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  margin-top: 4px;
+}
+
+.coupon-promo-card-body {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.coupon-promo-card-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+}
+
+.coupon-promo-card-desc {
+  font-size: 20px;
+  color: var(--color-text-secondary);
+}
+
+.coupon-promo-card-condition {
+  font-size: 20px;
+  color: var(--color-primary-light);
+}
+
+.coupon-promo-card-expire {
+  font-size: 20px;
+  color: var(--color-text-tertiary);
+}
+
+.coupon-promo-card-btn {
+  margin-top: 8px;
+  padding: 10px 0;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.coupon-promo-card-btn-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.coupon-promo-card-used {
+  font-size: 20px;
+  color: var(--color-text-tertiary);
+  font-weight: var(--font-weight-medium);
+}
+
+.hover-btn {
+  opacity: 0.85;
+}

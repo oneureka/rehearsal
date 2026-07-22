@@ -11,6 +11,11 @@ const cardColors: Record<string, string> = {
   '4': '#E0D0C0'
 }
 
+const roomTypeLabel: Record<string, string> = {
+  dance: '舞蹈房',
+  studio: '摄影棚'
+}
+
 export default function RoomDetail() {
   const router = useRouter()
   const room = mockRooms.find((r) => r.id === router.params.id)
@@ -18,7 +23,7 @@ export default function RoomDetail() {
   if (!room) {
     return (
       <View className="room-detail-error">
-        <Text>舞蹈室不存在</Text>
+        <Text>场地不存在</Text>
       </View>
     )
   }
@@ -34,7 +39,10 @@ export default function RoomDetail() {
 
         <View className="room-detail-body">
           <View className="room-detail-header">
-            <Text className="room-detail-name">{room.name}</Text>
+            <View>
+              <Text className="room-detail-name">{room.name}</Text>
+              <Text className="room-detail-type">{roomTypeLabel[room.type]}</Text>
+            </View>
             <Text className="room-detail-price">
               {formatPrice(room.pricePerHour)}/时
             </Text>
@@ -42,6 +50,15 @@ export default function RoomDetail() {
 
           <View className="room-detail-rating">
             <Text className="room-detail-stars">★ {room.rating}</Text>
+          </View>
+
+          <View className="room-detail-info-row">
+            <Text className="room-detail-info-label">面积</Text>
+            <Text className="room-detail-info-value">{room.area}㎡</Text>
+          </View>
+          <View className="room-detail-info-row">
+            <Text className="room-detail-info-label">容纳</Text>
+            <Text className="room-detail-info-value">{room.capacity} 人</Text>
           </View>
 
           <View className="room-detail-address">
@@ -82,7 +99,7 @@ export default function RoomDetail() {
           })
         }
       >
-        <Text className="room-detail-book-text">预约场地</Text>
+        <Text className="room-detail-book-text">空间预约</Text>
       </View>
     </View>
   )

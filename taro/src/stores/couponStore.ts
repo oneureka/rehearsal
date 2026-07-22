@@ -11,7 +11,7 @@ const MOCK_TEMPLATES: CardTemplate[] = [
     value: 600000,
     price: 88000,
     validDays: 90,
-    description: '适用于所有舞蹈室，不限时段'
+    description: '适用于所有场地预约，不限时段'
   },
   {
     id: 'ct_002',
@@ -20,7 +20,7 @@ const MOCK_TEMPLATES: CardTemplate[] = [
     value: 5,
     price: 128000,
     validDays: 180,
-    description: '适用于所有导师课程'
+    description: '适用于所有导师课程指导'
   },
   {
     id: 'ct_003',
@@ -29,7 +29,7 @@ const MOCK_TEMPLATES: CardTemplate[] = [
     value: 20,
     price: 19800,
     validDays: 30,
-    description: '全场场地预约享受8折优惠'
+    description: '全场场地预约享受 8 折优惠'
   }
 ]
 
@@ -45,7 +45,7 @@ interface CouponState {
   useUserCard: (id: string) => void
 }
 
-export const useCouponStore = create<CouponState>((set, get) => ({
+export const useCouponStore = create<CouponState>((set) => ({
   cardTemplates: MOCK_TEMPLATES,
   userCards: [],
   isLoading: false,

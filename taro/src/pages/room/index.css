@@ -47,6 +47,13 @@
   letter-spacing: 1px;
 }
 
+.room-detail-type {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  margin-top: 4px;
+  display: block;
+}
+
 .room-detail-price {
   font-size: var(--font-size-lg);
   color: var(--color-primary);

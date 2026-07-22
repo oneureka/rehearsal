@@ -1,30 +1,22 @@
-.teacher-detail {
+.coach {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--color-surface);
 }
 
-.teacher-detail-error {
-  padding: 40px;
-  text-align: center;
-  color: var(--color-text-tertiary);
-}
+.coach-error { padding: 40px; text-align: center; color: var(--color-text-tertiary); }
+.coach-scroll { flex: 1; }
 
-.teacher-detail-scroll {
-  flex: 1;
-}
-
-.teacher-detail-hero {
+.coach-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px 32px 24px;
 }
 
-.teacher-detail-avatar {
-  width: 200px;
-  height: 200px;
+.coach-avatar {
+  width: 200px; height: 200px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -33,13 +25,13 @@
   box-shadow: var(--shadow-sm);
 }
 
-.teacher-detail-avatar-text {
+.coach-avatar-text {
   font-size: 80px;
   font-weight: var(--font-weight-bold);
   color: rgba(255, 255, 255, 0.5);
 }
 
-.teacher-detail-name {
+.coach-name {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
@@ -47,36 +39,34 @@
   margin-bottom: 4px;
 }
 
-.teacher-detail-title {
+.coach-title {
   font-size: var(--font-size-base);
   color: var(--color-text-tertiary);
   letter-spacing: 1px;
   margin-bottom: 12px;
 }
 
-.teacher-detail-tags {
+.coach-tags {
   display: flex;
   gap: 8px;
 }
 
-.teacher-detail-tag {
+.coach-tag {
   font-size: 22px;
   padding: 4px 14px;
   border-radius: var(--radius-pill);
   background-color: var(--color-tag-bg);
   color: var(--color-text-secondary);
-  letter-spacing: 0.5px;
 }
 
-.teacher-detail-stats {
+.coach-stats {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  gap: 0;
 }
 
-.teacher-detail-stat {
+.coach-stat {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,34 +74,31 @@
   width: 140px;
 }
 
-.teacher-detail-stat-value {
+.coach-stat-value {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
 }
 
-.teacher-detail-stat-label {
+.coach-stat-label {
   font-size: var(--font-size-xs);
   color: var(--color-text-tertiary);
 }
 
-.teacher-detail-stat-divider {
-  width: 1px;
-  height: 36px;
+.coach-stat-divider {
+  width: 1px; height: 36px;
   background-color: var(--color-divider);
 }
 
-.teacher-detail-body {
-  padding: 0 32px 120px;
-}
+.coach-body { padding: 0 32px 120px; }
 
-.teacher-detail-divider {
+.coach-divider {
   height: 1px;
   background-color: var(--color-divider);
   margin: 20px 0;
 }
 
-.teacher-detail-section-title {
+.coach-section-title {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
@@ -120,24 +107,16 @@
   display: block;
 }
 
-.teacher-detail-desc {
+.coach-desc {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   line-height: 1.6;
-  letter-spacing: 0.3px;
 }
 
-.teacher-detail-empty {
-  padding: 40px 0;
-  text-align: center;
-}
+.coach-empty { padding: 40px 0; text-align: center; }
+.coach-empty-text { font-size: var(--font-size-sm); color: var(--color-text-tertiary); }
 
-.teacher-detail-empty-text {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-tertiary);
-}
-
-.teacher-detail-book {
+.coach-book {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -149,9 +128,11 @@
   text-align: center;
 }
 
-.teacher-detail-book-text {
+.coach-book-text {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: #ffffff;
   letter-spacing: 2px;
 }
+
+.hover-btn { opacity: 0.85; }

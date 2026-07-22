@@ -1,28 +1,28 @@
 import { create } from 'zustand'
-import type { Teacher, Course, TeacherListParams } from '@/types'
+import type { Coach, Course, CoachListParams } from '@/types'
 
-interface TeacherState {
-  teachers: Teacher[]
-  currentTeacher: Teacher | null
+interface CoachState {
+  coaches: Coach[]
+  currentCoach: Coach | null
   courses: Course[]
   isLoading: boolean
-  params: TeacherListParams
+  params: CoachListParams
 
-  setTeachers: (teachers: Teacher[]) => void
-  setCurrentTeacher: (teacher: Teacher | null) => void
+  setCoaches: (coaches: Coach[]) => void
+  setCurrentCoach: (coach: Coach | null) => void
   setCourses: (courses: Course[]) => void
-  setParams: (params: TeacherListParams) => void
+  setParams: (params: CoachListParams) => void
 }
 
-export const useTeacherStore = create<TeacherState>((set) => ({
-  teachers: [],
-  currentTeacher: null,
+export const useCoachStore = create<CoachState>((set) => ({
+  coaches: [],
+  currentCoach: null,
   courses: [],
   isLoading: false,
   params: {},
 
-  setTeachers: (teachers) => set({ teachers }),
-  setCurrentTeacher: (teacher) => set({ currentTeacher: teacher }),
+  setCoaches: (coaches) => set({ coaches }),
+  setCurrentCoach: (coach) => set({ currentCoach: coach }),
   setCourses: (courses) => set({ courses }),
   setParams: (params) => set({ params })
 }))

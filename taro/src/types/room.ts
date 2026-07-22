@@ -8,6 +8,10 @@ export interface DanceRoom {
   pricePerHour: number
   rating: number
   openHours: string
+  spaceId: string
+  area: number
+  capacity: number
+  type: 'dance' | 'studio'
 }
 
 export interface TimeSlot {

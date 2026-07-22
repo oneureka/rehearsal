@@ -24,3 +24,24 @@ export interface PurchaseCardParams {
   cardId: string
   quantity: number
 }
+
+export type PromoCouponType = 'discount' | 'voucher'
+
+export interface PromoCoupon {
+  id: string
+  name: string
+  type: PromoCouponType
+  value: number
+  condition: number
+  validDays: number
+  description: string
+}
+
+export interface UserPromoCoupon {
+  id: string
+  userId: string
+  couponId: string
+  coupon?: PromoCoupon
+  expireDate: string
+  used: boolean
+}

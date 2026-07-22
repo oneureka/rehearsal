@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { View, Text, Swiper, SwiperItem, ScrollView } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import './index.css'
-import { mockBanners, mockRooms, mockTeachers } from '@/services/mock/data'
+import { mockBanners, mockSpaces, mockRooms, mockCoaches } from '@/services/mock/data'
 import { formatPrice } from '@/utils/format'
 
 const roomColors = ['#E8D5C4', '#D4C5B2', '#C9BAA3', '#E0D0C0']
-const teacherColors = ['#C4A882', '#B89B80', '#D4BFA8', '#C9B090']
+const coachColors = ['#C4A882', '#B89B80', '#D4BFA8', '#C9B090']
 
 function navigateTo(url: string) {
   Taro.navigateTo({ url })
@@ -55,12 +55,12 @@ export default function Home() {
         <View
           className="quick-action-item"
           hoverClass="hover-press"
-          onClick={() => navigateTo('/pages/room-list/index')}
+          onClick={() => Taro.switchTab({ url: '/pages/orders/index' })}
         >
           <View className="quick-action-icon quick-action-icon--room">
             <Text className="quick-action-icon-text">R</Text>
           </View>
-          <Text className="quick-action-label">预约场地</Text>
+          <Text className="quick-action-label">预约中心</Text>
         </View>
         <View
           className="quick-action-item"
@@ -75,22 +75,53 @@ export default function Home() {
         <View
           className="quick-action-item"
           hoverClass="hover-press"
-          onClick={() => navigateTo('/pages/teacher-list/index')}
+          onClick={() => navigateTo('/pages/coaches/index')}
         >
           <View className="quick-action-icon quick-action-icon--teacher">
             <Text className="quick-action-icon-text">T</Text>
           </View>
-          <Text className="quick-action-label">导师课程</Text>
+          <Text className="quick-action-label">课程指导</Text>
         </View>
+        <View
+          className="quick-action-item"
+          hoverClass="hover-press"
+          onClick={() => navigateTo('/pages/coupon-promo/index')}
+        >
+          <View className="quick-action-icon quick-action-icon--teacher">
+            <Text className="quick-action-icon-text">P</Text>
+          </View>
+          <Text className="quick-action-label">优惠券</Text>
+        </View>
+      </View>
+
+      <View className="section">
+        <View className="section-header">
+          <Text className="section-title">我们的空间</Text>
+        </View>
+        {mockSpaces.map((space) => (
+          <View
+            key={space.id}
+            className="space-card"
+            hoverClass="hover-card"
+            onClick={() => navigateTo(`/pages/space/index?id=${space.id}`)}
+          >
+            <View className="space-card-top">
+              <Text className="space-card-name">{space.name}</Text>
+              <Text className="space-card-arrow">→</Text>
+            </View>
+            <Text className="space-card-address">{space.address}</Text>
+            <Text className="space-card-hours">{space.openHours}</Text>
+          </View>
+        ))}
       </View>
 
       <View className="section">
         <View
           className="section-header"
           hoverClass="hover-opacity"
-          onClick={() => navigateTo('/pages/room-list/index')}
+          onClick={() => navigateTo('/pages/rooms/index')}
         >
-          <Text className="section-title">热门舞蹈室</Text>
+          <Text className="section-title">精选场地</Text>
           <Text className="section-more">查看全部 →</Text>
         </View>
         <ScrollView className="section-scroll" scrollX showScrollbar={false}>
@@ -100,7 +131,7 @@ export default function Home() {
               className="room-card"
               hoverClass="hover-press-down"
               onClick={() =>
-                navigateTo(`/pages/room-detail/index?id=${room.id}`)
+                navigateTo(`/pages/room/index?id=${room.id}`)
               }
             >
               <View
@@ -127,34 +158,34 @@ export default function Home() {
         <View
           className="section-header"
           hoverClass="hover-opacity"
-          onClick={() => navigateTo('/pages/teacher-list/index')}
+          onClick={() => navigateTo('/pages/coaches/index')}
         >
-          <Text className="section-title">推荐导师</Text>
+          <Text className="section-title">人气导师</Text>
           <Text className="section-more">查看全部 →</Text>
         </View>
         <ScrollView className="section-scroll" scrollX showScrollbar={false}>
-          {mockTeachers.map((teacher, i) => (
+          {mockCoaches.map((coach, i) => (
             <View
-              key={teacher.id}
-              className="teacher-card"
+              key={coach.id}
+              className="coach-card"
               hoverClass="hover-scale"
               onClick={() =>
-                navigateTo(`/pages/teacher-detail/index?id=${teacher.id}`)
+                navigateTo(`/pages/coach/index?id=${coach.id}`)
               }
             >
               <View
-                className="teacher-avatar"
+                className="coach-avatar"
                 style={{
-                  backgroundColor: teacherColors[i % teacherColors.length]
+                  backgroundColor: coachColors[i % coachColors.length]
                 }}
               >
-                <Text className="teacher-avatar-text">{teacher.name[0]}</Text>
+                <Text className="coach-avatar-text">{coach.name[0]}</Text>
               </View>
-              <Text className="teacher-name">{teacher.name}</Text>
-              <Text className="teacher-title">{teacher.title}</Text>
-              <View className="teacher-tags">
-                {teacher.specialties.slice(0, 2).map((s) => (
-                  <Text key={s} className="teacher-tag">
+              <Text className="coach-name">{coach.name}</Text>
+              <Text className="coach-title">{coach.title}</Text>
+              <View className="coach-tags">
+                {coach.specialties.slice(0, 2).map((s) => (
+                  <Text key={s} className="coach-tag">
                     {s}
                   </Text>
                 ))}
@@ -165,7 +196,7 @@ export default function Home() {
       </View>
 
       <View className="home-footer">
-        <Text className="home-footer-text">rehearsal · 舞蹈空间预约</Text>
+        <Text className="home-footer-text">rehearsal</Text>
       </View>
     </View>
   )

@@ -1,7 +1,7 @@
 import { View, Text } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import { useCouponStore } from '@/stores/couponStore'
-import { formatPrice, formatDate } from '@/utils/format'
+import { formatDate } from '@/utils/format'
 import { CARD_TYPE_MAP } from '@/constants'
 import './index.css'
 

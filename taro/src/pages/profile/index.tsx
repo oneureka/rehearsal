@@ -2,12 +2,14 @@ import { View, Text } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import { useUserStore } from '@/stores/userStore'
 import { useCouponStore } from '@/stores/couponStore'
+import { usePromoCouponStore } from '@/stores/promoCouponStore'
 import { formatPrice } from '@/utils/format'
 import './index.css'
 
 export default function Profile() {
   const { user } = useUserStore()
   const cardCount = useCouponStore((s) => s.userCards.length)
+  const promoCount = usePromoCouponStore((s) => s.userCoupons.length)
 
   return (
     <View className="profile">
@@ -33,8 +35,8 @@ export default function Profile() {
         </View>
         <View className="profile-stat-divider" />
         <View className="profile-stat">
-          <Text className="profile-stat-value">{cardCount}</Text>
-          <Text className="profile-stat-label">卡券</Text>
+          <Text className="profile-stat-value">{cardCount + promoCount}</Text>
+          <Text className="profile-stat-label">优惠券</Text>
         </View>
       </View>
 
@@ -42,9 +44,9 @@ export default function Profile() {
         <View
           className="profile-menu-item"
           hoverClass="hover-opacity"
-          onClick={() => Taro.navigateTo({ url: '/pages/order-detail/index' })}
+          onClick={() => Taro.switchTab({ url: '/pages/orders/index' })}
         >
-          <Text className="profile-menu-text">我的订单</Text>
+          <Text className="profile-menu-text">订单中心</Text>
           <Text className="profile-menu-arrow">→</Text>
         </View>
         <View className="profile-menu-divider" />
@@ -53,7 +55,7 @@ export default function Profile() {
           hoverClass="hover-opacity"
           onClick={() => Taro.navigateTo({ url: '/pages/recharge/index' })}
         >
-          <Text className="profile-menu-text">余额充值</Text>
+          <Text className="profile-menu-text">充值</Text>
           <Text className="profile-menu-arrow">→</Text>
         </View>
         <View className="profile-menu-divider" />
@@ -71,7 +73,7 @@ export default function Profile() {
           hoverClass="hover-opacity"
           onClick={() => Taro.navigateTo({ url: '/pages/points/index' })}
         >
-          <Text className="profile-menu-text">积分明细</Text>
+          <Text className="profile-menu-text">积分中心</Text>
           <Text className="profile-menu-arrow">→</Text>
         </View>
         <View className="profile-menu-divider" />
@@ -81,6 +83,24 @@ export default function Profile() {
           onClick={() => Taro.navigateTo({ url: '/pages/coupons/index' })}
         >
           <Text className="profile-menu-text">我的卡券</Text>
+          <Text className="profile-menu-arrow">→</Text>
+        </View>
+        <View className="profile-menu-divider" />
+        <View
+          className="profile-menu-item"
+          hoverClass="hover-opacity"
+          onClick={() => Taro.navigateTo({ url: '/pages/coupon-promo/index' })}
+        >
+          <Text className="profile-menu-text">优惠券</Text>
+          <Text className="profile-menu-arrow">→</Text>
+        </View>
+        <View className="profile-menu-divider" />
+        <View
+          className="profile-menu-item"
+          hoverClass="hover-opacity"
+          onClick={() => Taro.navigateTo({ url: '/pages/faq/index' })}
+        >
+          <Text className="profile-menu-text">FAQ</Text>
           <Text className="profile-menu-arrow">→</Text>
         </View>
       </View>

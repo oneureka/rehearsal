@@ -1,4 +1,4 @@
-export interface Teacher {
+export interface Coach {
   id: string
   name: string
   avatar: string
@@ -20,7 +20,7 @@ export interface Course {
   maxStudents: number
 }
 
-export interface TeacherListParams {
+export interface CoachListParams {
   specialty?: string
   minRating?: number
 }
