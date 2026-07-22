@@ -1,7 +1,7 @@
 import { View, Text } from '@tarojs/components'
 import { useRouter } from '@tarojs/taro'
 import { useBookingStore } from '@/stores/bookingStore'
-import { mockRooms, mockCoaches } from '@/services/mock/data'
+import { mockRooms, mockChoreographers } from '@/services/mock/data'
 import { formatPrice, formatDateTime } from '@/utils/format'
 import { BOOKING_STATUS_MAP } from '@/constants'
 import './index.css'
@@ -34,7 +34,7 @@ export default function OrderDetail() {
   const subjectName =
     booking.type === 'room'
       ? mockRooms.find((r) => r.id === booking.roomId)?.name || '场地'
-      : mockCoaches.find((c) => c.id === booking.teacherId)?.name || '课程指导'
+      : mockChoreographers.find((c) => c.id === booking.teacherId)?.name || '课程指导'
 
   return (
     <View className="order-detail">

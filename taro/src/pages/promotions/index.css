@@ -1,33 +1,33 @@
-.coupon-promo {
+.promotions {
   min-height: 100vh;
   background-color: var(--color-bg);
 }
 
-.coupon-promo-tabs {
+.promotions-tabs {
   display: flex;
   background-color: var(--color-surface);
   padding: 0 32px;
   border-bottom: 1px solid var(--color-divider);
 }
 
-.coupon-promo-tab {
+.promotions-tab {
   position: relative;
   padding: 20px 0;
   margin-right: 32px;
 }
 
-.coupon-promo-tab-text {
+.promotions-tab-text {
   font-size: var(--font-size-base);
   color: var(--color-text-tertiary);
   letter-spacing: 0.5px;
 }
 
-.coupon-promo-tab--active .coupon-promo-tab-text {
+.promotions-tab--active .promotions-tab-text {
   color: var(--color-text-primary);
   font-weight: var(--font-weight-semibold);
 }
 
-.coupon-promo-tab-indicator {
+.promotions-tab-indicator {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -37,24 +37,24 @@
   border-radius: 2px;
 }
 
-.coupon-promo-list {
+.promotions-list {
   padding: 16px 32px 32px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.coupon-promo-empty {
+.promotions-empty {
   padding: 60px 0;
   text-align: center;
 }
 
-.coupon-promo-empty-text {
+.promotions-empty-text {
   font-size: var(--font-size-sm);
   color: var(--color-text-tertiary);
 }
 
-.coupon-promo-card {
+.promotions-card {
   display: flex;
   background-color: var(--color-surface);
   border-radius: var(--radius-lg);
@@ -62,11 +62,11 @@
   box-shadow: var(--shadow-sm);
 }
 
-.coupon-promo-card--used {
+.promotions-card--used {
   opacity: 0.5;
 }
 
-.coupon-promo-card-side {
+.promotions-card-side {
   width: 160px;
   display: flex;
   flex-direction: column;
@@ -76,27 +76,27 @@
   flex-shrink: 0;
 }
 
-.coupon-promo-card-side--discount {
+.promotions-card-side--discount {
   background-color: #f0ebe3;
 }
 
-.coupon-promo-card-side--voucher {
+.promotions-card-side--voucher {
   background-color: #e8e0d6;
 }
 
-.coupon-promo-card-side-value {
+.promotions-card-side-value {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
 }
 
-.coupon-promo-card-side-label {
+.promotions-card-side-label {
   font-size: var(--font-size-xs);
   color: var(--color-text-tertiary);
   margin-top: 4px;
 }
 
-.coupon-promo-card-body {
+.promotions-card-body {
   flex: 1;
   padding: 16px;
   display: flex;
@@ -104,29 +104,29 @@
   gap: 4px;
 }
 
-.coupon-promo-card-name {
+.promotions-card-name {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   letter-spacing: 0.5px;
 }
 
-.coupon-promo-card-desc {
+.promotions-card-desc {
   font-size: 20px;
   color: var(--color-text-secondary);
 }
 
-.coupon-promo-card-condition {
+.promotions-card-condition {
   font-size: 20px;
   color: var(--color-primary-light);
 }
 
-.coupon-promo-card-expire {
+.promotions-card-expire {
   font-size: 20px;
   color: var(--color-text-tertiary);
 }
 
-.coupon-promo-card-btn {
+.promotions-card-btn {
   margin-top: 8px;
   padding: 10px 0;
   background-color: var(--color-primary);
@@ -134,14 +134,14 @@
   text-align: center;
 }
 
-.coupon-promo-card-btn-text {
+.promotions-card-btn-text {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   color: #ffffff;
   letter-spacing: 1px;
 }
 
-.coupon-promo-card-used {
+.promotions-card-used {
   font-size: 20px;
   color: var(--color-text-tertiary);
   font-weight: var(--font-weight-medium);

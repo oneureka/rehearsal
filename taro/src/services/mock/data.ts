@@ -1,4 +1,4 @@
-import type { DanceRoom, Coach, Space } from '@/types'
+import type { DanceRoom, Choreographer, Space } from '@/types'
 
 export interface BannerItem {
   id: string
@@ -114,7 +114,7 @@ export const mockRooms: DanceRoom[] = [
   }
 ]
 
-export const mockCoaches: Coach[] = [
+export const mockChoreographers: Choreographer[] = [
   {
     id: '1',
     name: 'Hyejin',

@@ -3,7 +3,7 @@ import Taro from '@tarojs/taro'
 import { useMemo, useState } from 'react'
 import { useBookingStore } from '@/stores/bookingStore'
 import { useTransactionStore } from '@/stores/transactionStore'
-import { mockRooms, mockCoaches } from '@/services/mock/data'
+import { mockRooms, mockChoreographers } from '@/services/mock/data'
 import { formatPrice } from '@/utils/format'
 import { BOOKING_STATUS_MAP, TRANSACTION_TYPE_MAP } from '@/constants'
 import './index.css'
@@ -15,8 +15,8 @@ function getLabel(booking: { type: string; roomId?: string; teacherId?: string }
     const room = mockRooms.find((r) => r.id === booking.roomId)
     return room?.name || '场地'
   }
-  const coach = mockCoaches.find((t) => t.id === booking.teacherId)
-  return coach?.name || '课程指导'
+  const choreographer = mockChoreographers.find((t) => t.id === booking.teacherId)
+  return choreographer?.name || '课程指导'
 }
 
 export default function Orders() {
@@ -63,7 +63,7 @@ export default function Orders() {
             <View
               className="orders-empty-btn"
               hoverClass="hover-btn"
-              onClick={() => Taro.navigateTo({ url: '/pages/rooms/index' })}
+              onClick={() => Taro.navigateTo({ url: '/pages/space/index?id=space_001' })}
             >
               <Text className="orders-empty-btn-text">空间预约</Text>
             </View>

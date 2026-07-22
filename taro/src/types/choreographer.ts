@@ -1,4 +1,4 @@
-export interface Coach {
+export interface Choreographer {
   id: string
   name: string
   avatar: string
@@ -20,7 +20,7 @@ export interface Course {
   maxStudents: number
 }
 
-export interface CoachListParams {
+export interface ChoreographerListParams {
   specialty?: string
   minRating?: number
 }

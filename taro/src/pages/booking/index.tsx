@@ -9,7 +9,7 @@ import TimeSlotPicker from '@/components/TimeSlotPicker'
 import Loading from '@/components/Loading'
 import './index.css'
 
-export default function RoomBooking() {
+export default function Booking() {
   const router = useRouter()
   const room = mockRooms.find((r) => r.id === router.params.id)
   const balance = useUserStore((s) => s.user.balance)
@@ -22,7 +22,7 @@ export default function RoomBooking() {
 
   if (!room) {
     return (
-      <View className="room-booking-error">
+      <View className="booking-error">
         <Text>预约信息有误</Text>
       </View>
     )
@@ -62,12 +62,12 @@ export default function RoomBooking() {
   }
 
   return (
-    <View className="room-booking">
+    <View className="booking">
       <Loading visible={loading} text="提交中..." />
 
-      <View className="room-booking-card">
-        <Text className="room-booking-card-name">{room.name}</Text>
-        <Text className="room-booking-card-price">
+      <View className="booking-card">
+        <Text className="booking-card-name">{room.name}</Text>
+        <Text className="booking-card-price">
           {formatPrice(room.pricePerHour)}/时
         </Text>
       </View>
@@ -77,32 +77,32 @@ export default function RoomBooking() {
         onSelect={handleSlotSelect}
       />
 
-      <View className="room-booking-section">
-        <Text className="room-booking-section-title">支付方式</Text>
-        <View className="room-booking-payment">
-          <View className="room-booking-payment-item">
+      <View className="booking-section">
+        <Text className="booking-section-title">支付方式</Text>
+        <View className="booking-payment">
+          <View className="booking-payment-item">
             <View>
-              <Text className="room-booking-payment-label">余额支付</Text>
-              <Text className="room-booking-payment-desc">
+              <Text className="booking-payment-label">余额支付</Text>
+              <Text className="booking-payment-desc">
                 可用 {formatPrice(balance)}
               </Text>
             </View>
-            <Text className="room-booking-payment-check">✓</Text>
+            <Text className="booking-payment-check">✓</Text>
           </View>
         </View>
       </View>
 
-      <View className="room-booking-total">
-        <Text className="room-booking-total-label">共 {hours} 小时</Text>
-        <Text className="room-booking-total-price">{formatPrice(total)}</Text>
+      <View className="booking-total">
+        <Text className="booking-total-label">共 {hours} 小时</Text>
+        <Text className="booking-total-price">{formatPrice(total)}</Text>
       </View>
 
       <View
-        className={`room-booking-submit ${!canSubmit ? 'room-booking-submit--disabled' : ''}`}
+        className={`booking-submit ${!canSubmit ? 'booking-submit--disabled' : ''}`}
         hoverClass={canSubmit ? 'hover-btn' : undefined}
         onClick={handleSubmit}
       >
-        <Text className="room-booking-submit-text">
+        <Text className="booking-submit-text">
           {canSubmit ? '确认预约' : hours > 0 ? '余额不足' : '请选择时段'}
         </Text>
       </View>

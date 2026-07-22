@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { View, Text, Swiper, SwiperItem, ScrollView } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import './index.css'
-import { mockBanners, mockSpaces, mockRooms, mockCoaches } from '@/services/mock/data'
+import { mockBanners, mockSpaces, mockRooms, mockChoreographers } from '@/services/mock/data'
 import { formatPrice } from '@/utils/format'
 
 const roomColors = ['#E8D5C4', '#D4C5B2', '#C9BAA3', '#E0D0C0']
-const coachColors = ['#C4A882', '#B89B80', '#D4BFA8', '#C9B090']
+const choreographerColors = ['#C4A882', '#B89B80', '#D4BFA8', '#C9B090']
 
 function navigateTo(url: string) {
   Taro.navigateTo({ url })
@@ -75,7 +75,7 @@ export default function Home() {
         <View
           className="quick-action-item"
           hoverClass="hover-press"
-          onClick={() => navigateTo('/pages/coaches/index')}
+          onClick={() => navigateTo('/pages/choreographers/index')}
         >
           <View className="quick-action-icon quick-action-icon--teacher">
             <Text className="quick-action-icon-text">T</Text>
@@ -85,7 +85,7 @@ export default function Home() {
         <View
           className="quick-action-item"
           hoverClass="hover-press"
-          onClick={() => navigateTo('/pages/coupon-promo/index')}
+          onClick={() => navigateTo('/pages/promotions/index')}
         >
           <View className="quick-action-icon quick-action-icon--teacher">
             <Text className="quick-action-icon-text">P</Text>
@@ -116,13 +116,8 @@ export default function Home() {
       </View>
 
       <View className="section">
-        <View
-          className="section-header"
-          hoverClass="hover-opacity"
-          onClick={() => navigateTo('/pages/rooms/index')}
-        >
+        <View className="section-header">
           <Text className="section-title">精选场地</Text>
-          <Text className="section-more">查看全部 →</Text>
         </View>
         <ScrollView className="section-scroll" scrollX showScrollbar={false}>
           {mockRooms.map((room, i) => (
@@ -158,34 +153,34 @@ export default function Home() {
         <View
           className="section-header"
           hoverClass="hover-opacity"
-          onClick={() => navigateTo('/pages/coaches/index')}
+          onClick={() => navigateTo('/pages/choreographers/index')}
         >
           <Text className="section-title">人气导师</Text>
           <Text className="section-more">查看全部 →</Text>
         </View>
         <ScrollView className="section-scroll" scrollX showScrollbar={false}>
-          {mockCoaches.map((coach, i) => (
+          {mockChoreographers.map((choreographer, i) => (
             <View
-              key={coach.id}
-              className="coach-card"
+              key={choreographer.id}
+              className="choreographer-card"
               hoverClass="hover-scale"
               onClick={() =>
-                navigateTo(`/pages/coach/index?id=${coach.id}`)
+                navigateTo(`/pages/choreographer/index?id=${choreographer.id}`)
               }
             >
               <View
-                className="coach-avatar"
+                className="choreographer-avatar"
                 style={{
-                  backgroundColor: coachColors[i % coachColors.length]
+                  backgroundColor: choreographerColors[i % choreographerColors.length]
                 }}
               >
-                <Text className="coach-avatar-text">{coach.name[0]}</Text>
+                <Text className="choreographer-avatar-text">{choreographer.name[0]}</Text>
               </View>
-              <Text className="coach-name">{coach.name}</Text>
-              <Text className="coach-title">{coach.title}</Text>
-              <View className="coach-tags">
-                {coach.specialties.slice(0, 2).map((s) => (
-                  <Text key={s} className="coach-tag">
+              <Text className="choreographer-name">{choreographer.name}</Text>
+              <Text className="choreographer-title">{choreographer.title}</Text>
+              <View className="choreographer-tags">
+                {choreographer.specialties.slice(0, 2).map((s) => (
+                  <Text key={s} className="choreographer-tag">
                     {s}
                   </Text>
                 ))}

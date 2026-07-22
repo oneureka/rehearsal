@@ -53,7 +53,7 @@ export default function Profile() {
         <View
           className="profile-menu-item"
           hoverClass="hover-opacity"
-          onClick={() => Taro.navigateTo({ url: '/pages/recharge/index' })}
+          onClick={() => Taro.navigateTo({ url: '/pages/wallet/index' })}
         >
           <Text className="profile-menu-text">充值</Text>
           <Text className="profile-menu-arrow">→</Text>
@@ -62,7 +62,7 @@ export default function Profile() {
         <View
           className="profile-menu-item"
           hoverClass="hover-opacity"
-          onClick={() => Taro.navigateTo({ url: '/pages/withdraw/index' })}
+          onClick={() => Taro.navigateTo({ url: '/pages/wallet/index' })}
         >
           <Text className="profile-menu-text">提现</Text>
           <Text className="profile-menu-arrow">→</Text>
@@ -89,7 +89,7 @@ export default function Profile() {
         <View
           className="profile-menu-item"
           hoverClass="hover-opacity"
-          onClick={() => Taro.navigateTo({ url: '/pages/coupon-promo/index' })}
+          onClick={() => Taro.navigateTo({ url: '/pages/promotions/index' })}
         >
           <Text className="profile-menu-text">优惠券</Text>
           <Text className="profile-menu-arrow">→</Text>

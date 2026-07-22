@@ -221,7 +221,7 @@
   font-weight: var(--font-weight-medium);
 }
 
-.coach-card {
+.choreographer-card {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -230,11 +230,11 @@
   flex-shrink: 0;
 }
 
-.coach-card:last-child {
+.choreographer-card:last-child {
   margin-right: 0;
 }
 
-.coach-avatar {
+.choreographer-avatar {
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -245,13 +245,13 @@
   box-shadow: var(--shadow-sm);
 }
 
-.coach-avatar-text {
+.choreographer-avatar-text {
   font-size: 64px;
   font-weight: var(--font-weight-bold);
   color: rgba(255, 255, 255, 0.6);
 }
 
-.coach-name {
+.choreographer-name {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
@@ -259,19 +259,19 @@
   margin-bottom: 4px;
 }
 
-.coach-title {
+.choreographer-title {
   font-size: var(--font-size-sm);
   color: var(--color-text-tertiary);
   letter-spacing: 0.5px;
   margin-bottom: 8px;
 }
 
-.coach-tags {
+.choreographer-tags {
   display: flex;
   gap: 6px;
 }
 
-.coach-tag {
+.choreographer-tag {
   font-size: 20px;
   padding: 4px 12px;
   border-radius: var(--radius-pill);

@@ -95,7 +95,7 @@ export default function RoomDetail() {
         hoverClass="hover-btn"
         onClick={() =>
           Taro.navigateTo({
-            url: `/pages/room-booking/index?id=${room.id}`
+            url: `/pages/booking/index?id=${room.id}`
           })
         }
       >

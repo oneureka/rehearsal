@@ -4,7 +4,7 @@ export type { DanceRoom, TimeSlot, RoomListParams } from './room'
 
 export type { Space } from './space'
 
-export type { Coach, Course, CoachListParams } from './coach'
+export type { Choreographer, Course, ChoreographerListParams } from './choreographer'
 
 export type {
   BookingStatus,

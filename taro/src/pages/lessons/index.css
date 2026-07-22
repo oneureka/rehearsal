@@ -1,16 +1,16 @@
-.course-booking {
+.lesson {
   padding: 24px 32px 120px;
   min-height: 100vh;
   background-color: var(--color-bg);
 }
 
-.course-booking-error {
+.lesson-error {
   padding: 40px;
   text-align: center;
   color: var(--color-text-tertiary);
 }
 
-.course-booking-card {
+.lesson-card {
   display: flex;
   align-items: center;
   background-color: var(--color-surface);
@@ -20,7 +20,7 @@
   margin-bottom: 20px;
 }
 
-.course-booking-avatar {
+.lesson-avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -31,42 +31,42 @@
   flex-shrink: 0;
 }
 
-.course-booking-avatar-text {
+.lesson-avatar-text {
   font-size: 36px;
   font-weight: var(--font-weight-bold);
   color: rgba(255, 255, 255, 0.5);
 }
 
-.course-booking-card-body {
+.lesson-card-body {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.course-booking-card-name {
+.lesson-card-name {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   letter-spacing: 1px;
 }
 
-.course-booking-card-title {
+.lesson-card-title {
   font-size: var(--font-size-xs);
   color: var(--color-text-tertiary);
 }
 
-.course-booking-card-price {
+.lesson-card-price {
   font-size: var(--font-size-sm);
   color: var(--color-primary);
   font-weight: var(--font-weight-medium);
 }
 
-.course-booking-section {
+.lesson-section {
   margin-bottom: 20px;
 }
 
-.course-booking-section-title {
+.lesson-section-title {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
@@ -75,7 +75,7 @@
   display: block;
 }
 
-.course-booking-picker {
+.lesson-picker {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,24 +85,24 @@
   box-shadow: var(--shadow-sm);
 }
 
-.course-booking-picker-text {
+.lesson-picker-text {
   font-size: var(--font-size-base);
   color: var(--color-text-primary);
   font-weight: var(--font-weight-medium);
 }
 
-.course-booking-picker-arrow {
+.lesson-picker-arrow {
   font-size: var(--font-size-sm);
   color: var(--color-text-tertiary);
 }
 
-.course-booking-slots {
+.lesson-slots {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
-.course-booking-slot {
+.lesson-slot {
   padding: 14px 0;
   text-align: center;
   border-radius: var(--radius-sm);
@@ -110,64 +110,64 @@
   background-color: var(--color-surface);
 }
 
-.course-booking-slot--active {
+.lesson-slot--active {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.course-booking-slot--hover {
+.lesson-slot--hover {
   opacity: 0.7;
 }
 
-.course-booking-slot-text {
+.lesson-slot-text {
   font-size: var(--font-size-sm);
   color: var(--color-text-primary);
   font-weight: var(--font-weight-medium);
 }
 
-.course-booking-slot-text--active {
+.lesson-slot-text--active {
   color: #ffffff;
 }
 
-.course-booking-avatar--lg {
+.lesson-avatar--lg {
   width: 100px;
   height: 100px;
 }
 
-.course-booking-avatar--lg .course-booking-avatar-text {
+.lesson-avatar--lg .lesson-avatar-text {
   font-size: 44px;
 }
 
-.course-booking-payment {
+.lesson-payment {
   background-color: var(--color-surface);
   border-radius: var(--radius-md);
   overflow: hidden;
 }
 
-.course-booking-payment-item {
+.lesson-payment-item {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.course-booking-payment-label {
+.lesson-payment-label {
   font-size: var(--font-size-sm);
   color: var(--color-text-primary);
 }
 
-.course-booking-payment-desc {
+.lesson-payment-desc {
   font-size: var(--font-size-xs);
   color: var(--color-text-tertiary);
 }
 
-.course-booking-payment-check {
+.lesson-payment-check {
   font-size: var(--font-size-base);
   color: var(--color-success);
   font-weight: var(--font-weight-bold);
 }
 
-.course-booking-total {
+.lesson-total {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -176,18 +176,18 @@
   margin-top: 8px;
 }
 
-.course-booking-total-label {
+.lesson-total-label {
   font-size: var(--font-size-base);
   color: var(--color-text-secondary);
 }
 
-.course-booking-total-price {
+.lesson-total-price {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
 }
 
-.course-booking-submit {
+.lesson-submit {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -199,17 +199,17 @@
   text-align: center;
 }
 
-.course-booking-submit-text {
+.lesson-submit-text {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: #ffffff;
   letter-spacing: 2px;
 }
 
-.course-booking-submit--disabled {
+.lesson-submit--disabled {
   background-color: var(--color-border);
 }
 
-.course-booking-submit--disabled .course-booking-submit-text {
+.lesson-submit--disabled .lesson-submit-text {
   color: var(--color-text-tertiary);
 }
